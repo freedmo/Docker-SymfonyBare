@@ -23,7 +23,10 @@ services:
     expose:
       - "9001"
     environment:
-      XDEBUG_ENABLED: 1
+      XDEBUG_ENABLE: "on" # Activate for general xDebug use
+      XDEBUG_REMOTE_DEBUG_ENABLE: "on"
+      XDEBUG_PROFILER_ENABLE: "on"
+      XDEBUG_HOST_ADDRESS: "10.0.75.1"
   mysql-symfony-api:
     build: ./Docker-MySQL
     container_name: mysql-${PROJECT_NAME}
